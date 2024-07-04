@@ -1,37 +1,28 @@
 function emailValidation() {
     const form = document.getElementById('form');
-    const emailInput = document.getElementById('email');
-    const confirmEmailInput = document.getElementById('email_confirm');
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        if (emailInput.value.trim() !== confirmEmailInput.value.trim()) {
-            // Crea el elemento de mensaje de error
-            const errorElement = document.createElement('p');
-            errorElement.textContent = 'El correo electrónico no coincide';
-            errorElement.classList.add('alert');
-            errorElement.style.color = '#d14539'; // Aplica el color de texto deseado
-
-            // Agrega el mensaje de error debajo del campo de confirmación de correo electrónico
-            const confirmEmailParent = confirmEmailInput.parentElement;
-            confirmEmailParent.appendChild(errorElement);
-
-            // Aplica estilo al campo de confirmación de correo electrónico
-            
-            confirmEmailInput.style.border = 'solid 1px #d14539';
-
-            // Limpia el mensaje de error y restaura el estilo después de 3 segundos
-            setTimeout(function() {
-                confirmEmailInput.style.backgroundColor = '';
-                confirmEmailInput.style.border = 'solid 1px #beb9b7';
-                confirmEmailParent.removeChild(errorElement);
-            }, 3000);
-        } else {
-            // Si los correos coinciden, enviar el formulario
-            form.submit();
+    const emailComfirmField = document.getElementById('email_confirm');
+    const element = document.createElement('p');
+    const message = document.createTextNode("Elcorreo no coincide");
+    const contentField = document.getElementById('content_field');
+    element.appendChild(message);
+    element.setAttribute('id', 'alert');
+    element.classList.add("alert_color");
+    emailComfirmField.addEventListener('input', e => {
+      if(form.email.value !== form.email_confirm.value) {
+        if (!document.getElementById('alert')) {
+          contentField.parentNode.insertBefore(element, contentField);
+          emailComfirmField.classList.add("alert_bg");
         }
+      } else {
+        emailComfirmField.classList.remove("alert_bg");
+        element.parentNode.removeChild(element);
+      }
     });
-}
-
-window.onload = emailValidation;
+  };
+  
+  window.onload = function() {
+    emailValidation();
+  };
+  
+  
+  

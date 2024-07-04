@@ -2,37 +2,37 @@
 <html>
   <head>
     <title>DIC cafe</title>
-    <link href="css/normalize.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <link href="css/nomalize.css" rel="stylesheet">
     <link href="css/validación.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <section class="section_inner">
       <div class="section_title">
         <h1>CONTACT</h1>
-        <p>contactanos</p>
+        <p>Contactanos</p>
       </div>
       <form action="#" method="POST" id="form">
-        <table class="contact">
+        <table class="contact" id="table">
           <tr class="contact_line">
-            <td class="contact_sign"><label for="name">NOMBRE</label></td>
+            <td class="contact_sign"><label for="name">SU NOMBRE</label></td>
             <td class="contact_input"><input type="text" name="name" id="name"></td>
           </tr>
           <tr class="contact_line">
-            <td class="contact_sign"><label for="email">CORREO ELECTRONICO</label></td>
+            <td class="contact_sign"><label for="name">CORREO ELECTRONICO</label></td>
             <td class="contact_input"><input type="email" name="email" id="email"></td>
           </tr>
           <tr class="contact_line">
-            <td class="contact_sign"><label for="email_confirm">CONFIRME SI CORREO ELECTRONICO</label></td>
+            <td class="contact_sign"><label for="name">CONFIRME SU CORREO ELECTRONICO</label></td>
             <td class="contact_input"><input type="email" name="email_confirm" id="email_confirm"></td>
           </tr>
-          <tr class="contact_content">
-            <td class="contact_sign"><label for="content">CONTENIDO</label></td>
+          <tr class="contact_content" id="content_field">
+            <td class="contact_sign"><label for="content">DESCRIPCION</label></td>
             <td class="contact_input"><textarea name="content" id="content"></textarea></td>
           </tr>
         </table>
         <div class="contact_btn_area">
-          <button type="reset" class="contact_btn reset_btn">RESTABLECER</button>
+          <button type="reset" class="contact_btn reset_btn">RESETEAR</button>
           <button type="submit" class="contact_btn submit_btn">ENVIAR</button>
         </div>
       </form>
