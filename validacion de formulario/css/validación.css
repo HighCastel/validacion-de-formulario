@@ -80,11 +80,6 @@ body {
   color: #fff;
   padding: 20px;
   background: #d14539;
-}
-.alert {
-  color: #fff;
-  padding: 20px;
-  background: #d14539;
   width: 80%;
   position: fixed;
   top: 50%;
@@ -97,4 +92,5 @@ body {
 }
 .alert_bg {
   background: rgba(230,169,171,.5);
+  padding: 20
 }
